@@ -1,5 +1,5 @@
 class Artist
-  attr_reader :name
+  attr_reader :name, :genres, :songs
   @@all = []
 
   def initialize(name)
@@ -16,7 +16,7 @@ class Artist
   def new_song(name, genre)
     song = Song.new(name,self, genre)
     @songs << song
-    @genres << genre if !@genres.include?(genre)
+    @genres << genre
     song
   end
  end
